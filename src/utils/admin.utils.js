@@ -135,9 +135,11 @@ export const getAllProducts = async ()=>{
     const productList  = await getDocs(docRef)
 
     if(!productList.empty){
+      let data=[];
         productList.forEach((prod)=>{
-            console.log(prod.id , prod.data())
+            data.push(prod.data()) 
         })
+        return data;
     }
 }
 
